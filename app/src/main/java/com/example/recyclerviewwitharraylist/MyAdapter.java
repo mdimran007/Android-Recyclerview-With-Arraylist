@@ -14,11 +14,13 @@ import java.util.ArrayList;
 public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
 
     ArrayList<String> countryName;
+    ArrayList<Integer> countryflag;
     Context context;
 
-    public MyAdapter(ArrayList<String> countryName,Context context) {
+    public MyAdapter(ArrayList<String> countryName, ArrayList<Integer> countryflag, Context context) {
         this.context=context;
         this.countryName=countryName;
+        this.countryflag=countryflag;
     }
 
     @NonNull
@@ -32,6 +34,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
         holder.countryName.setText(countryName.get(position));
+        holder.flagImage.setImageResource(countryflag.get(position));
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

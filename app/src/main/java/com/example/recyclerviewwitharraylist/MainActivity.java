@@ -13,6 +13,7 @@ import java.util.Arrays;
 public class MainActivity extends AppCompatActivity {
 
     ArrayList<String> countryName=new ArrayList<>(Arrays.asList("Afghanistan","Bangladesh","China","Denmark","Ecuador","France","Greece","Hungary","India","Japan"));
+    ArrayList<Integer> countryflag=new ArrayList<>(Arrays.asList(R.drawable.afghanistan,R.drawable.bangladesh,R.drawable.china,R.drawable.denmark,R.drawable.ecuador,R.drawable.france,R.drawable.greece,R.drawable.hungary,R.drawable.india,R.drawable.japan));
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView recyclerView= (RecyclerView)findViewById(R.id.recycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        MyAdapter myAdapter =new MyAdapter(countryName,this);
+        MyAdapter myAdapter =new MyAdapter(countryName,countryflag, this);
         recyclerView.setAdapter(myAdapter);
     }
 }
